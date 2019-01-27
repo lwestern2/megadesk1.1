@@ -80,6 +80,7 @@
             this.searchQuote.TabIndex = 3;
             this.searchQuote.Text = "Search Quote";
             this.searchQuote.UseVisualStyleBackColor = true;
+            this.searchQuote.Click += new System.EventHandler(this.searchQuote_Click);
             // 
             // viewQuote
             // 
@@ -91,6 +92,7 @@
             this.viewQuote.TabIndex = 2;
             this.viewQuote.Text = "View Quote";
             this.viewQuote.UseVisualStyleBackColor = true;
+            this.viewQuote.Click += new System.EventHandler(this.viewQuote_Click);
             // 
             // mainMenu
             // 

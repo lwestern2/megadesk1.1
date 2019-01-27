@@ -60,7 +60,7 @@ namespace MegaDesk_LeahWestern
         {
             mainMenu returnMainMenu = new mainMenu();
             returnMainMenu.Show();
-            Close();
+            this.Close();
         }
 
         //public bool UserClosing { get; set; }

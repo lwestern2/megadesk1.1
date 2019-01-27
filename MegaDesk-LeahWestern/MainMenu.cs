@@ -25,6 +25,22 @@ namespace MegaDesk_LeahWestern
             Hide();
         }
 
+        private void viewQuote_Click(object sender, EventArgs e)
+        {
+            ViewAllQuotes viewAllQuoteForm = new ViewAllQuotes();
+            viewAllQuoteForm.Tag = this;
+            viewAllQuoteForm.Show(this);
+            Hide();
+        }
+
+        private void searchQuote_Click(object sender, EventArgs e)
+        {
+            SearchQuotes searchQuoteForm = new SearchQuotes();
+            searchQuoteForm.Tag = this;
+            searchQuoteForm.Show(this);
+            Hide();
+        }
+
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();

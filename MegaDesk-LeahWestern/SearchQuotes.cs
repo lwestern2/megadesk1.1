@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace MegaDesk_LeahWestern
 {
-    public partial class SreachQuotes : Form
+    public partial class SearchQuotes : Form
     {
-        public SreachQuotes()
+        public SearchQuotes()
         {
             InitializeComponent();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            mainMenu returnMainMenu = new mainMenu();
+            returnMainMenu.Show();
+            this.Close();
         }
     }
 }

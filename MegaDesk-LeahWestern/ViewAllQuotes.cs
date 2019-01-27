@@ -16,5 +16,12 @@ namespace MegaDesk_LeahWestern
         {
             InitializeComponent();
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            mainMenu returnMainMenu = new mainMenu();
+            returnMainMenu.Show();
+            this.Close();
+        }
     }
 }

@@ -54,15 +54,15 @@ namespace MegaDesk_LeahWestern
 
                             // add column headings to search output List View
                             // Make sure View properity is set to Details
-                            listViewResults.Columns.Add("#", 30, HorizontalAlignment.Center);
-                            listViewResults.Columns.Add("Name", 170, HorizontalAlignment.Center);
-                            listViewResults.Columns.Add("Date", 180, HorizontalAlignment.Center);
-                            listViewResults.Columns.Add("Width", 70, HorizontalAlignment.Center);
-                            listViewResults.Columns.Add("Depth", 70, HorizontalAlignment.Center);
-                            listViewResults.Columns.Add("Drawers", 80, HorizontalAlignment.Center);
-                            listViewResults.Columns.Add("Material", 120, HorizontalAlignment.Center);
-                            listViewResults.Columns.Add("Days", 70, HorizontalAlignment.Center);
-                            listViewResults.Columns.Add("Total", 170, HorizontalAlignment.Center);
+                            listViewResults.View = View.Details;
+                            listViewResults.Columns.Add("Name", 80, HorizontalAlignment.Center);
+                            listViewResults.Columns.Add("Date", 70, HorizontalAlignment.Center);
+                            listViewResults.Columns.Add("Width", 50, HorizontalAlignment.Center);
+                            listViewResults.Columns.Add("Depth", 50, HorizontalAlignment.Center);
+                            listViewResults.Columns.Add("Drawers", 60, HorizontalAlignment.Center);
+                            listViewResults.Columns.Add("Material", 70, HorizontalAlignment.Center);
+                            listViewResults.Columns.Add("Days", 50, HorizontalAlignment.Center);
+                            listViewResults.Columns.Add("Total", 70, HorizontalAlignment.Center);
 
                         }
                     }

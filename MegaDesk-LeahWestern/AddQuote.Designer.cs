@@ -40,10 +40,11 @@
             this.materialLabel = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
             this.rushGroup = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radio7 = new System.Windows.Forms.RadioButton();
+            this.radio5 = new System.Windows.Forms.RadioButton();
+            this.radio3 = new System.Windows.Forms.RadioButton();
             this.boxMaterial = new System.Windows.Forms.ComboBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioNone = new System.Windows.Forms.RadioButton();
             this.rushGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,18 +71,19 @@
             // 
             // boxName
             // 
-            this.boxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boxName.Location = new System.Drawing.Point(146, 22);
+            this.boxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxName.Location = new System.Drawing.Point(148, 20);
+            this.boxName.Margin = new System.Windows.Forms.Padding(5);
             this.boxName.Name = "boxName";
-            this.boxName.Size = new System.Drawing.Size(170, 21);
+            this.boxName.Size = new System.Drawing.Size(170, 23);
             this.boxName.TabIndex = 1;
             // 
             // boxDepth
             // 
-            this.boxDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boxDepth.Location = new System.Drawing.Point(81, 103);
+            this.boxDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxDepth.Location = new System.Drawing.Point(81, 100);
             this.boxDepth.Name = "boxDepth";
-            this.boxDepth.Size = new System.Drawing.Size(80, 21);
+            this.boxDepth.Size = new System.Drawing.Size(80, 23);
             this.boxDepth.TabIndex = 3;
             this.boxDepth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BoxDepth_KeyPress);
             // 
@@ -97,10 +99,10 @@
             // 
             // boxWidth
             // 
-            this.boxWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boxWidth.Location = new System.Drawing.Point(81, 63);
+            this.boxWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxWidth.Location = new System.Drawing.Point(81, 60);
             this.boxWidth.Name = "boxWidth";
-            this.boxWidth.Size = new System.Drawing.Size(80, 21);
+            this.boxWidth.Size = new System.Drawing.Size(80, 23);
             this.boxWidth.TabIndex = 2;
             this.boxWidth.Validating += new System.ComponentModel.CancelEventHandler(this.BoxWidth_Validating);
             // 
@@ -116,10 +118,10 @@
             // 
             // boxDrawer
             // 
-            this.boxDrawer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boxDrawer.Location = new System.Drawing.Point(167, 183);
+            this.boxDrawer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxDrawer.Location = new System.Drawing.Point(167, 180);
             this.boxDrawer.Name = "boxDrawer";
-            this.boxDrawer.Size = new System.Drawing.Size(98, 21);
+            this.boxDrawer.Size = new System.Drawing.Size(98, 23);
             this.boxDrawer.TabIndex = 5;
             // 
             // drawerLabel
@@ -151,68 +153,75 @@
             this.submitButton.TabIndex = 11;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // rushGroup
             // 
-            this.rushGroup.Controls.Add(this.radioButton3);
-            this.rushGroup.Controls.Add(this.radioButton2);
-            this.rushGroup.Controls.Add(this.radioButton1);
+            this.rushGroup.Controls.Add(this.radioNone);
+            this.rushGroup.Controls.Add(this.radio7);
+            this.rushGroup.Controls.Add(this.radio5);
+            this.rushGroup.Controls.Add(this.radio3);
             this.rushGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rushGroup.Location = new System.Drawing.Point(30, 219);
             this.rushGroup.Name = "rushGroup";
-            this.rushGroup.Size = new System.Drawing.Size(113, 102);
+            this.rushGroup.Size = new System.Drawing.Size(157, 87);
             this.rushGroup.TabIndex = 14;
             this.rushGroup.TabStop = false;
             this.rushGroup.Text = "Rush Order";
             // 
-            // radioButton2
+            // radio7
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 47);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(56, 19);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "5 Day";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radio7.AutoSize = true;
+            this.radio7.Location = new System.Drawing.Point(90, 51);
+            this.radio7.Name = "radio7";
+            this.radio7.Size = new System.Drawing.Size(56, 19);
+            this.radio7.TabIndex = 8;
+            this.radio7.TabStop = true;
+            this.radio7.Text = "7 Day";
+            this.radio7.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radio5
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 23);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(56, 19);
-            this.radioButton1.TabIndex = 6;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "3 Day";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radio5.AutoSize = true;
+            this.radio5.Location = new System.Drawing.Point(90, 22);
+            this.radio5.Name = "radio5";
+            this.radio5.Size = new System.Drawing.Size(56, 19);
+            this.radio5.TabIndex = 7;
+            this.radio5.TabStop = true;
+            this.radio5.Text = "5 Day";
+            this.radio5.UseVisualStyleBackColor = true;
+            // 
+            // radio3
+            // 
+            this.radio3.AutoSize = true;
+            this.radio3.Location = new System.Drawing.Point(6, 51);
+            this.radio3.Name = "radio3";
+            this.radio3.Size = new System.Drawing.Size(56, 19);
+            this.radio3.TabIndex = 6;
+            this.radio3.TabStop = true;
+            this.radio3.Text = "3 Day";
+            this.radio3.UseVisualStyleBackColor = true;
             // 
             // boxMaterial
             // 
             this.boxMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxMaterial.FormattingEnabled = true;
-            this.boxMaterial.Items.AddRange(new object[] {
-            "Oak - $200",
-            "Laminate - $100",
-            "Pine - $50",
-            "Rosewood - $300",
-            "Veneer - $125"});
-            this.boxMaterial.Location = new System.Drawing.Point(95, 143);
+            this.boxMaterial.Location = new System.Drawing.Point(95, 140);
             this.boxMaterial.Name = "boxMaterial";
             this.boxMaterial.Size = new System.Drawing.Size(158, 23);
             this.boxMaterial.TabIndex = 15;
             this.boxMaterial.Text = "Please choose material";
             // 
-            // radioButton3
+            // radioNone
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 71);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(56, 19);
-            this.radioButton3.TabIndex = 8;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "7 Day";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioNone.AutoSize = true;
+            this.radioNone.Location = new System.Drawing.Point(6, 22);
+            this.radioNone.Name = "radioNone";
+            this.radioNone.Size = new System.Drawing.Size(55, 19);
+            this.radioNone.TabIndex = 9;
+            this.radioNone.TabStop = true;
+            this.radioNone.Text = "None";
+            this.radioNone.UseVisualStyleBackColor = true;
             // 
             // AddQuote
             // 
@@ -256,9 +265,10 @@
         private System.Windows.Forms.Label materialLabel;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.GroupBox rushGroup;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radio5;
+        private System.Windows.Forms.RadioButton radio3;
         private System.Windows.Forms.ComboBox boxMaterial;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radio7;
+        private System.Windows.Forms.RadioButton radioNone;
     }
 }

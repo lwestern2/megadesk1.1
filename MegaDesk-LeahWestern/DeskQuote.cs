@@ -22,7 +22,11 @@ namespace MegaDesk_LeahWestern
         private const int PRICE_PER_DRAWER = 50;
         private const int PRICE_PER_AREA = 1;
         private const int RUSH_ADD = 2000;
+        private const int RUSH1 = 3;
+        private const int RUSH2 = 5;
+        private const int RUSH3 = 7;
         #endregion
+
 
         public DeskQuote(string customerName, DateTime quoteDate, int width, int depth, int drawers, Desk.Material material, int rushDay)
         {

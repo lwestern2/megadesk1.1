@@ -9,11 +9,11 @@ namespace MegaDesk_LeahWestern
     class DeskQuote
     {
         #region quote description
-        private string customerName { get; set; }
-        private DateTime quoteDate { get; set; }
-        private Desk Desk = new Desk();
+        public string customerName { get; set; }
+        public DateTime quoteDate { get; set; }
+        public Desk Desk = new Desk();
         public int rushDays { get; set; }
-        private int quoteAmount;
+        public int quoteAmount;
         #endregion
 
         #region constants

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace MegaDesk_LeahWestern
 {
@@ -15,17 +16,13 @@ namespace MegaDesk_LeahWestern
     {
         #region declare variables
         public string customerName = String.Empty;
-        double width = 0;
-        double depth = 0;
+        int width = 0;
+        int depth = 0;
         int drawers = 0;
         int rushDays = 0;
-
-        public string CustomerName { get; private set; }
-        public int DeskWidth { get; private set; }
-        public int DeskDepth { get; private set; }
-        public int Drawers { get; private set; }
-        internal Desk.Material Material { get; private set; }
-        public int RushDays { get; private set; }
+        int QuoteTotal = 0;
+        Desk.Material Material;
+        private const string QUOTEFILE = @"quotes.json";
         #endregion
 
         public AddQuote()
@@ -92,48 +89,48 @@ namespace MegaDesk_LeahWestern
         {
             try
             {
-                CustomerName = boxName.Text;
-                DeskWidth = int.Parse(boxWidth.Text);
-                DeskDepth = int.Parse(boxDepth.Text);
-                Drawers = int.Parse(boxDrawer.Text);
+                customerName = boxName.Text;
+                width = int.Parse(boxWidth.Text);
+                depth = int.Parse(boxDepth.Text);
+                drawers = int.Parse(boxDrawer.Text);
                 Material = (Desk.Material)boxMaterial.SelectedValue;
 
                 // Get rush order days base on radio box selections
                 if (radioNone.Checked)
                 {
-                    RushDays = 0;
+                    rushDays = 0;
                 }
                 if (radio3.Checked)
                 {
-                    RushDays = 3;
+                    rushDays = 3;
                 }
                 if (radio5.Checked)
                 {
-                    RushDays = 5;
+                    rushDays = 5;
                 }
                 if (radio7.Checked)
                 {
-                    RushDays = 7;
+                    rushDays = 7;
                 }
 
                 // create new deskOrder and calcQuote
-                DeskQuote NewQuote = new DeskQuote(CustomerName, DateTime.Now, DeskWidth, DeskDepth, Drawers, Material, RushDays);
-                int QuoteTotal = NewQuote.CalcQuote();
+                DeskQuote NewQuote = new DeskQuote(customerName, DateTime.Now, width, depth, drawers, Material, rushDays);
+                QuoteTotal = NewQuote.CalcQuote();
 
                 //build string to quote save to file
-                string DeskFileWrite = CustomerName + "," + DateTime.Now + "," + DeskWidth + "," + DeskDepth + "," + Drawers + "," + Material + "," + RushDays + "," + QuoteTotal;
+                string DeskFileWrite = customerName + "," + DateTime.Now + "," + width + "," + depth + "," + drawers + "," + Material + "," + rushDays + "," + QuoteTotal;
 
                 // ask how to do this without making all of the properties public because I know they are in and can be used
                 // I just have no idea how to get the Serializer to get them when they are "private".
-                string jsonFile = @"quotes.json";
+                string jsonWrite = JsonConvert.SerializeObject(NewQuote);
 
-                if (!File.Exists(jsonFile))
+                if (!File.Exists(QUOTEFILE))
                 {
-                    using (StreamWriter sw = File.CreateText(jsonFile)) { sw.WriteLine(DeskFileWrite); }
+                    using (StreamWriter sw = File.CreateText(QUOTEFILE)) { }
                 }
                 else
                 {
-                    using (StreamWriter swa = File.AppendText(jsonFile)) { swa.WriteLine(jsonFile); }
+                    using (StreamWriter swa = File.AppendText(QUOTEFILE)) { swa.WriteLine(DeskFileWrite); }
 
                     MessageBox.Show("Quote Submitted");
                 }
